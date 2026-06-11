@@ -36,5 +36,6 @@ export interface Lottery {
   shortName: string;
   closingTime: string; // "HH:MM" format
   schedule: string;
+  color: string; // hex color for this lottery's theme
   closed: boolean;
 }
