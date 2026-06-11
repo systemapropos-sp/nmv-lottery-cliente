@@ -219,7 +219,7 @@ export default function Dashboard() {
 
   return (
     <div
-      className="h-[100dvh] flex flex-col overflow-hidden"
+      className="h-[100dvh] flex flex-col overflow-y-auto"
       style={{ backgroundColor: '#f3f4f6' }}
     >
       {/* Header */}
@@ -255,7 +255,7 @@ export default function Dashboard() {
       {bets.length > 0 && (
         <div className="shrink-0 mx-3 mb-1 bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden" style={{ maxHeight: '100px' }}>
           <div className="overflow-y-auto h-full">
-            {bets.map((bet, idx) => (
+            {bets.map((bet) => (
               <motion.div
                 key={bet.id}
                 initial={{ opacity: 0, x: -20 }}

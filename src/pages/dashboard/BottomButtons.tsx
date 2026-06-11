@@ -11,28 +11,18 @@ interface BottomButtonsProps {
 
 export function BottomButtons({ selectedLottery, betCount, onCreateTicket, onPrint }: BottomButtonsProps) {
   return (
-    <motion.div
-      className="shrink-0 flex gap-2 px-3 py-2 pb-3"
-      initial={{ y: 20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.3, delay: 0.1 }}
-    >
+    <div className="shrink-0 flex gap-2 px-3 py-2 pb-4">
       {/* CREAR TICKET */}
       <motion.button
         whileTap={{ scale: 0.97 }}
         onClick={onCreateTicket}
-        className="flex-[7] h-14 rounded-xl text-white font-bold text-base shadow-lg flex items-center justify-center gap-2 transition-colors"
+        className="flex-[7] h-12 rounded-xl text-white font-bold text-sm shadow-lg flex items-center justify-center gap-2 transition-colors"
         style={{
           backgroundColor: selectedLottery.color,
           boxShadow: `0 4px 12px ${selectedLottery.color}66`,
         }}
-        animate={{
-          backgroundColor: selectedLottery.color,
-          boxShadow: `0 4px 12px ${selectedLottery.color}66`,
-        }}
-        transition={{ duration: 0.3 }}
       >
-        <Ticket size={20} />
+        <Ticket size={18} />
         <span>CREAR TICKET</span>
         {betCount > 0 && (
           <span className="ml-1 bg-white/25 rounded-full px-2 py-0.5 text-xs font-bold">
@@ -45,11 +35,11 @@ export function BottomButtons({ selectedLottery, betCount, onCreateTicket, onPri
       <motion.button
         whileTap={{ scale: 0.97 }}
         onClick={onPrint}
-        className="flex-[3] h-14 rounded-xl bg-gray-500 hover:bg-gray-600 text-white font-bold text-sm shadow-lg flex items-center justify-center gap-2 transition-colors"
+        className="flex-[3] h-12 rounded-xl bg-gray-500 hover:bg-gray-600 text-white font-bold text-sm shadow-lg flex items-center justify-center gap-2 transition-colors"
       >
-        <Printer size={18} />
+        <Printer size={16} />
         <span>Imprimir</span>
       </motion.button>
-    </motion.div>
+    </div>
   );
 }
